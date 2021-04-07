@@ -1,0 +1,101 @@
+<html>
+
+<head>
+    <title>
+        Student List
+    </title>
+</head>
+
+<body>
+    <style>
+        body {
+            background-color: aquamarine;
+            color: crimson;
+            margin-top: 100px;
+        }
+
+        input {
+            font-size: 22px;
+            margin: 15px;
+        }
+
+        #submit {
+            background-color: darkcyan;
+            color: rgb(255, 255, 255);
+        }
+
+        #sort {
+            margin: 40px;
+            display: none;
+        }
+    </style>
+    <center>
+        <h1>
+            Name Array
+        </h1>
+        <div class="mains">
+            <span>
+                1.
+            </span>
+            <span>
+                <input type="text" placeholder="Type Name Here!" id="name_1">
+            </span>
+            <br>
+            <span>
+                2.
+            </span>
+            <span>
+                <input type="text" placeholder="Type Name Here!" id="name_2">
+            </span>
+            <br>
+            <span>
+                3.
+            </span>
+            <span>
+                <input type="text" placeholder="Type Name Here!" id="name_3">
+            </span>
+            <br>
+            <span>
+                4.
+            </span>
+            <span>
+                <input type="text" placeholder="Type Name Here!" id="name_4">
+            </span>
+            <br>
+
+        </div>
+        <button id="submit" onclick="submit_name()">
+            Click Here to Submit
+        </button>
+        <div id="names">
+
+        </div>
+        <button id="sort" onclick="sort_names()">
+            Click Here to Sort
+        </button>
+    </center>
+    <script>
+        var student_array=[]
+        function submit_name(){
+            var N1=document.getElementById("name_1").value;
+            var N2=document.getElementById("name_2").value;
+            var N3=document.getElementById("name_3").value;
+            var N4=document.getElementById("name_4").value;
+            student_array.push(N1);
+            student_array.push(N2);
+            student_array.push(N3);
+            student_array.push(N4);
+            console.log(student_array)
+            document.getElementById("names").innerHTML=student_array;
+            document.getElementById("submit").style.display="none";
+            document.getElementById("sort").style.display="inline-block";
+        }
+    function sort_names(){
+        student_array.sort()
+        console.log(student_array)
+            document.getElementById("names").innerHTML=student_array;
+    }
+    </script>
+</body>
+
+</html>
